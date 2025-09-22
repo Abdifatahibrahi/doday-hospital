@@ -3,561 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doday Medical Center - Your Health is Our Priority</title>
+    <title>Doday Hospital Limited - Your Health is Our Priority</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Global Styles */
-        :root {
-            --primary: #1a73e8;
-            --secondary: #34a853;
-            --accent: #f25c54;
-            --light: #f8f9fa;
-            --dark: #202124;
-            --text: #5f6368;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            color: var(--text);
-            line-height: 1.6;
-            background-color: #f9f9f9;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn:hover {
-            background: #1557b7;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .btn-secondary {
-            background: var(--secondary);
-        }
-        
-        .btn-secondary:hover {
-            background: #2c8e46;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--dark);
-            margin-bottom: 15px;
-        }
-        
-        .section-title p {
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        /* Header Styles */
-        header {
-            background: white;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo i {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-right: 10px;
-        }
-        
-        .logo h1 {
-            font-size: 1.8rem;
-            color: var(--dark);
-        }
-        
-        .logo span {
-            color: var(--primary);
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 30px;
-        }
-        
-        nav ul li a {
-            text-decoration: none;
-            color: var(--text);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        nav ul li a:hover {
-            color: var(--primary);
-        }
-        
-        .nav-btn {
-            display: none;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(26, 115, 232, 0.8), rgba(26, 115, 232, 0.8)), url('https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 100px 0;
-            text-align: center;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-        
-        /* Services Section */
-        .services {
-            padding: 100px 0;
-            background: white;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .service-card {
-            background: var(--light);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: center;
-            padding: 30px;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .service-card i {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--dark);
-        }
-        
-        /* About Section */
-        .about {
-            padding: 100px 0;
-            background: var(--light);
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-text h2 {
-            font-size: 2.5rem;
-            color: var(--dark);
-            margin-bottom: 20px;
-        }
-        
-        .about-text p {
-            margin-bottom: 20px;
-        }
-        
-        .about-image {
-            flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        /* Doctors Section */
-        .doctors {
-            padding: 100px 0;
-            background: white;
-        }
-        
-        .doctors-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        
-        .doctor-card {
-            background: var(--light);
-            border-radius: 10px;
-            overflow: hidden;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-        
-        .doctor-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .doctor-image {
-            height: 250px;
-            overflow: hidden;
-        }
-        
-        .doctor-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .doctor-info {
-            padding: 20px;
-        }
-        
-        .doctor-info h3 {
-            color: var(--dark);
-            margin-bottom: 5px;
-        }
-        
-        .doctor-info p {
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-        
-        /* Testimonials */
-        .testimonials {
-            padding: 100px 0;
-            background: var(--light);
-        }
-        
-        .testimonial-container {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .testimonial {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            display: none;
-        }
-        
-        .testimonial.active {
-            display: block;
-            animation: fadeIn 1s;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-        
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--dark);
-        }
-        
-        .testimonial-nav {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-        }
-        
-        .testimonial-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #ccc;
-            margin: 0 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        
-        .testimonial-dot.active {
-            background: var(--primary);
-        }
-        
-        /* Appointment Section */
-        .appointment {
-            padding: 100px 0;
-            background: white;
-        }
-        
-        .appointment-container {
-            display: flex;
-            gap: 50px;
-            align-items: flex-start;
-        }
-        
-        .appointment-form {
-            flex: 1;
-            background: var(--light);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--dark);
-        }
-        
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        
-        .form-group textarea {
-            min-height: 120px;
-        }
-        
-        .appointment-info {
-            flex: 1;
-        }
-        
-        .appointment-info h3 {
-            font-size: 1.8rem;
-            color: var(--dark);
-            margin-bottom: 20px;
-        }
-        
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 25px;
-        }
-        
-        .info-item i {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-right: 15px;
-            margin-top: 5px;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 70px 0 20px;
-        }
-        
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
-        }
-        
-        .footer-col h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-col h3::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 2px;
-            background: var(--primary);
-        }
-        
-        .footer-col p {
-            margin-bottom: 15px;
-        }
-        
-        .footer-col ul {
-            list-style: none;
-        }
-        
-        .footer-col ul li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-col ul li a {
-            color: #ddd;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-col ul li a:hover {
-            color: var(--primary);
-        }
-        
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-icons a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            transition: all 0.3s;
-        }
-        
-        .social-icons a:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .appointment-container {
-                flex-direction: column;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            nav ul {
-                margin-top: 20px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            nav ul li {
-                margin: 0 10px 10px;
-            }
-            
-            .hero h2 {
-                font-size: 2.2rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero {
-                padding: 60px 0;
-            }
-            
-            .hero h2 {
-                font-size: 1.8rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .services, .about, .doctors, .testimonials, .appointment {
-                padding: 60px 0;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/png" href="images/doday-hospital.jpeg">
 </head>
 <body>
     <!-- Header -->
@@ -565,7 +14,7 @@
         <div class="container header-container">
             <div class="logo">
                 <i class="fas fa-hospital"></i>
-                <h1>Doday <span>Medical Center</span></h1>
+                <h1>Doday <span>Hospital Limited</span></h1>
             </div>
             <nav>
                 <ul>
@@ -598,19 +47,14 @@
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <i class="fas fa-heartbeat"></i>
-                    <h3>Cardiology</h3>
-                    <p>Comprehensive heart health services including diagnostics, treatment, and preventive care.</p>
+                    <i class="fas fa-female"></i>
+                    <h3>Maternity</h3>
+                    <p>Comprehensive maternity services including treatment, and preventive care.</p>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-baby"></i>
                     <h3>Pediatrics</h3>
                     <p>Specialized care for children from newborns to adolescents with a focus on preventive health.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-brain"></i>
-                    <h3>Neurology</h3>
-                    <p>Expert diagnosis and treatment for disorders of the nervous system and brain.</p>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-bone"></i>
@@ -636,14 +80,14 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>Doday Medical Center</h2>
-                    <p>Doday Medical Center Hospital has been serving the community for over 10 years. We are committed to providing exceptional healthcare services with a patient-centered approach.</p>
+                    <h2>Doday Hospital Limited</h2>
+                    <p>Doday Hospital Limited  has been serving the community for over 4 years. We are committed to providing exceptional healthcare services with a patient-centered approach.</p>
                     <p>Our team of highly skilled medical professionals utilizes the latest technology and evidence-based practices to ensure the best outcomes for our patients.</p>
                     <p>We believe in treating the whole person, not just the illness, and we strive to create a healing environment that promotes physical, emotional, and spiritual well-being.</p>
                     <a href="#appointment" class="btn">Schedule a Visit</a>
                 </div>
                 <div class="about-image">
-                    <img src="images/doday-hospital.jpeg" alt="Doday Medical Center">
+                    <img src="images/doday-hospital.jpeg" alt="Doday Hospital Limited">
                 </div>
             </div>
         </div>
@@ -658,9 +102,9 @@
             </div>
             <div class="doctors-grid">
                   <div class="doctor-card">
-                    <div class="doctor-image">
+                    <!-- <div class="doctor-image">
                         <img src="images/dr_muhamad_hussein.jpeg" alt="Dr. Muhamad Hussein">
-                    </div>
+                    </div> -->
                     <div class="doctor-info">
                         <h3>Dr. Muhamad Hussein</h3>
                         <p>Orthopedic Surgeon</p>
@@ -668,19 +112,19 @@
                     </div>
                 </div>
                 <div class="doctor-card">
-                    <div class="doctor-image">
+                    <!-- <div class="doctor-image">
                         <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Dr. Sarah Johnson">
-                    </div>
+                    </div> -->
                     <div class="doctor-info">
                         <h3>Dr. Sarah Johnson</h3>
-                        <p>Chief of Cardiology</p>
+                        <p>Chief of Dental Services</p>
                         <p>MD, FACC</p>
                     </div>
                 </div>
                 <div class="doctor-card">
-                    <div class="doctor-image">
+                    <!-- <div class="doctor-image">
                         <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1128&q=80" alt="Dr. Michael Chen">
-                    </div>
+                    </div> -->
                     <div class="doctor-info">
                         <h3>Dr. Michael Chen</h3>
                         <p>Head of Pediatrics</p>
@@ -688,15 +132,16 @@
                     </div>
                 </div>
                 <div class="doctor-card">
-                    <div class="doctor-image">
+                    <!-- <div class="doctor-image">
                         <img src="images/dr_eunice-Kamau.jpeg" alt="Dr. Eunice Kamau">
-                    </div>
+                    </div> -->
                     <div class="doctor-info">
                         <h3>Dr. Eunice Kamau</h3>
-                        <p>Neurology Specialist</p>
+                        <p>Chief of Obstetrics</p>
                         <p>MD, PhD</p>
                     </div>
                 </div>
+                
               
             </div>
         </div>
@@ -707,11 +152,11 @@
         <div class="container">
             <div class="section-title">
                 <h2>Patient Testimonials</h2>
-                <p>Hear what our patients have to say about their experiences at Doday Medical Center Hospital.</p>
+                <p>Hear what our patients have to say about their experiences at Doday Hospital Limited Hospital.</p>
             </div>
             <div class="testimonial-container">
                 <div class="testimonial active">
-                    <p class="testimonial-text">"The care I received at Doday Medical Center Hospital was exceptional. The staff was compassionate and professional, and the facilities are top-notch. I would highly recommend this hospital to anyone."</p>
+                    <p class="testimonial-text">"The care I received at Doday Hospital Limited Hospital was exceptional. The staff was compassionate and professional, and the facilities are top-notch. I would highly recommend this hospital to anyone."</p>
                     <p class="testimonial-author">- Mr. Issack Ali</p>
                 </div>
                 <div class="testimonial">
@@ -719,7 +164,7 @@
                     <p class="testimonial-author">- Madam Farhia</p>
                 </div>
                 <div class="testimonial">
-                    <p class="testimonial-text">"After my knee replacement surgery, the physical therapy team at Doday Medical Center helped me regain my mobility. I'm now back to playing golf pain-free. Thank you for giving me my active life back!"</p>
+                    <p class="testimonial-text">"After my knee replacement surgery, the physical therapy team at Doday Hospital Limited helped me regain my mobility. I'm now back to playing golf pain-free. Thank you for giving me my active life back!"</p>
                     <p class="testimonial-author">- Sahra Daud</p>
                 </div>
                 <div class="testimonial-nav">
@@ -756,9 +201,7 @@
                         <label for="department">Department</label>
                         <select id="department" required>
                             <option value="">Select Department</option>
-                            <option value="cardiology">Cardiology</option>
                             <option value="pediatrics">Pediatrics</option>
-                            <option value="neurology">Neurology</option>
                             <option value="orthopedics">Orthopedics</option>
                             <option value="dental">Dental Care</option>
                             <option value="ophthalmology">Ophthalmology</option>
@@ -826,8 +269,8 @@
         <div class="container">
             <div class="footer-container">
                 <div class="footer-col">
-                    <h3>Doday Medical Center Hospital</h3>
-                    <p>Providing comprehensive healthcare services with compassion and excellence since 2015.</p>
+                    <h3>Doday Hospital Limited Hospital</h3>
+                    <p>Providing comprehensive healthcare services with compassion and excellence since 2021.</p>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -848,12 +291,10 @@
                 <div class="footer-col">
                     <h3>Our Services</h3>
                     <ul>
-                        <li><a href="#">Cardiology</a></li>
                         <li><a href="#">Pediatrics</a></li>
                         <li><a href="#">Neurology</a></li>
                         <li><a href="#">Orthopedics</a></li>
                         <li><a href="#">Dental Care</a></li>
-                        <li><a href="#">Ophthalmology</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -864,7 +305,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Doday Medical Center Hospital. All rights reserved.</p>
+                <p>&copy; 2025 Doday Hospital Limited Hospital. All rights reserved.</p>
             </div>
         </div>
     </footer>
