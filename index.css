@@ -550,8 +550,29 @@
             }
         }
 
-/* Mobile Navigation */
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .appointment-container {
+        flex-direction: column;
+    }
+    
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
 @media (max-width: 768px) {
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+    
     .nav-btn {
         display: block;
         background: none;
@@ -559,6 +580,7 @@
         font-size: 1.5rem;
         color: var(--dark);
         cursor: pointer;
+        padding: 5px;
     }
     
     nav ul {
@@ -571,6 +593,7 @@
         background: white;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         padding: 20px 0;
+        z-index: 1000;
     }
     
     nav ul.show {
@@ -580,21 +603,58 @@
     nav ul li {
         margin: 0;
         text-align: center;
-        padding: 10px 0;
+        padding: 12px 0;
     }
     
     .header-container {
         position: relative;
     }
+    
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+    
+    .section-title h2 {
+        font-size: 2rem;
+    }
+    
+    /* Footer mobile styles */
+    footer {
+        padding: 50px 0 20px;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    
+    .footer-col h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 576px) {
+    .hero {
+        padding: 60px 0;
+    }
+    
     .hero h2 {
         font-size: 1.8rem;
     }
     
     .hero p {
         font-size: 1rem;
+    }
+    
+    .services, .about, .doctors, .testimonials, .appointment {
+        padding: 60px 0;
     }
     
     .section-title h2 {
@@ -613,6 +673,41 @@
         padding: 10px 20px;
         font-size: 0.9rem;
     }
+    
+    /* Footer small mobile */
+    footer {
+        padding: 40px 0 15px;
+    }
+    
+    .footer-container {
+        gap: 25px;
+        margin-bottom: 25px;
+    }
+    
+    .footer-col h3 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+    
+    .footer-col p,
+    .footer-col ul li a {
+        font-size: 0.9rem;
+    }
+    
+    .social-icons {
+        gap: 10px;
+    }
+    
+    .social-icons a {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .copyright {
+        font-size: 0.8rem;
+        padding-top: 15px;
+    }
 }
 
 /* Extra small devices */
@@ -628,5 +723,19 @@
     
     .logo h1 {
         font-size: 1.5rem;
+    }
+    
+    /* Footer extra small */
+    .footer-container {
+        gap: 20px;
+    }
+    
+    .footer-col {
+        padding: 0 10px;
+    }
+    
+    .social-icons a {
+        width: 32px;
+        height: 32px;
     }
 }
